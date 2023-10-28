@@ -1,0 +1,13 @@
+node_modules/
+*-results/
+playwright-report/
+allure*
+.env
+lighthouse/
+
+# Ignore all downloaded files
+images/*
+
+# Ignore configuration file
+config.json
+/dist/config.json

@@ -1,0 +1,59 @@
+{
+  "name": "starter-playwright",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/src/index.js ",
+    "debug": "node ./dist/src/index.js --debug",
+    "config": "node ./dist/src/assistant.js",
+    "clean": "rimraf allure-results && rimraf allure-report && rimraf test-results && rimraf playwright-report && rimraf junit-results && rimraf lighthouse",
+    "api-example": "npx playwright test tests/api.basic.example.spec.ts --project=chromium",
+    "data-mgmt": "npx playwright test tests/api.data.example.spec.ts --project=chromium",
+    "api-ui": "npm run clean && npx playwright test tests/api.ui.spec.ts --project=chromium",
+    "play-report": "npx playwright show-report",
+    "allure-report": "allure generate ./allure-results --clean",
+    "open-report": "npm run allure-report && allure open ./allure-report",
+    "firefox": "npm run clean && npx playwright test --project=firefox",
+    "chromium": "npx playwright test --project=chromium",
+    "a11y": "npm run clean && npx playwright test tests/a11y.lighthouse.spec.ts --project=chromium",
+    "webkit": "npx playwright test --project=webkit",
+    "test": "npm run clean && npx playwright test --project=chromium",
+    "test-head": "npm run clean && npx playwright test --headed",
+    "reinstall": "npx playwright install",
+    "install-deps": "npx playwright install-deps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlyautomatiza/starter-playwright.git"
+  },
+  "keywords": [
+    "playwright",
+    "playwright-test",
+    "allure report",
+    "web test automation"
+  ],
+  "author": "CharlyAutomatiza",
+  "license": "CC0",
+  "bugs": {
+    "url": "https://github.com/charlyautomatiza/starter-playwright/issues"
+  },
+  "homepage": "https://github.com/charlyautomatiza/starter-playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.38.1",
+    "@types/node": "^20.8.7",
+    "allure-commandline": "^2.24.0",
+    "allure-playwright": "^2.8.1",
+    "lighthouse": "11.1.0",
+    "playwright": "^1.38.1",
+    "playwright-lighthouse": "3.1.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.1.0",
+    "pino": "^8.16.0",
+    "pino-pretty": "^10.2.3",
+    "rimraf": "^5.0.1"
+  }
+}
